@@ -17,7 +17,7 @@ if (mysqli_num_rows($resultado) > 0) {
 }
 
 if (mysqli_num_rows($resultado) > 0) {
-    mysqli_query($conexao, "idseguidor != $idseguindo");
+    mysqli_query($conexao, "INSERT INTO seguiur idseguidor != $idseguindo");
 }
 
 header("Location: ../perfil.php?id=$idseguindo");
