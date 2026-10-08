@@ -7,5 +7,13 @@
 </head>
 <body>
     <a href="form_postagem.php">Fazer nova postagem</a>
+
+<?php
+require_once "conexao.php";
+require_once "verificar_login.php";
+
+$id_logado = $_SESSION['idusuario'];
+
+
 </body>
 </html>
