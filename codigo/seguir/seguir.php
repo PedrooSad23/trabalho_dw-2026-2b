@@ -7,6 +7,7 @@ $idseguindo = $_GET['id'];
 
 if ($idseguidor == $idseguindo) {
     header("Location: ../perfil.php?id=" . $idseguindo);
+    exit;
 }
 
 $resultado = mysqli_query($conexao, "SELECT * FROM seguir WHERE idseguidor = $idseguidor AND idseguindo = $idseguindo");
@@ -21,3 +22,4 @@ if (mysqli_num_rows($resultado) > 0) {
 
 
 header("Location: ../perfil.php?id=$idseguindo");
+exit;
