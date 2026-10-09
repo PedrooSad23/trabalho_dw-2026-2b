@@ -10,11 +10,25 @@ require_once "conexao.php";
     <title>Document</title>
 </head>
 <body>
-    <a href="form_postagem.php">Fazer nova postagem</a>
 
+<a href="form_postagem.php">Fazer nova postagem</a>
+
+<<<<<<< HEAD
 
 
     
 </body>
 
+=======
+<?php
+
+require_once "conexao.php";
+require_once "verificar_login.php";
+$id_logado = $_SESSION['idusuario'];
+
+?>
+</body>
+
+
+>>>>>>> 428afc8021880fb9d6d0c0b08a38d1c482a337af
 </html>
