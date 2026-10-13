@@ -1,6 +1,5 @@
 <?php
-
-
+require_once "verificar_sessao6.php";
 
 require_once "../conexao.php";
 
