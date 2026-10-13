@@ -17,33 +17,38 @@
             <td>seguir</td>
         </tr>
 
-       <!-- <?php 
+        <?php 
         require_once "../conexao.php";
+
+        // Pega o ID de quem está logado
+        $id_logado = $_SESSION['idusuario'];
         
-        $sql = "SELECT * FROM usuario";
-        
+        // Busca todos os usuários, menos você, para você não aparecer na sua própria lista.
+        $sql = "SELECT * FROM usuario WHERE idusuario != $id_logado";
         $resultados = mysqli_query($conexao, $sql);
         
-        //quebra a variável $resultados em linhas (vetores/array)
+        // Quebra a variável $resultados em linhas (vetores/array)
         while ($linha = mysqli_fetch_array($resultados)) {
-            $idusuario = $_GET['id_usuario'];
+            $idusuario = $_GET['idusuario'];
             $username_cliente = $_GET['username'];
-            $usuario = $_GET['usuario'];
-            $name = $_GET['name'];
-            $email = $_GET['email'];
-            $senha = $_GET['senha'];
-            $foto = $_GET[''];
-            }
-              
+
+            // Busca no banco linha onde quem está a seguir(idseguidor) é você($id_logado), e confere se a pessoa que está a ser seguida (idseguindo) é o usuário atual da linha
+            $conferir = mysqli_query($conexao, "SELECT * FROM seguir WHERE idseguidor = $id_logado AND idseguindo = $idusuario");
+            $ja_segue = mysqli_num_rows($conferir) > 0;     
+         
             echo "<td>$idusuario</td>";
             echo "<td>$username</td>";
-//            echo "<td>$name</td>";
-//            echo "<td>$email</td>";
-//            echo "<td>$senha</td>";
-//            echo "<td>$foto</td>";
+   
+            // Coloca o link de seguir/deixar de seguir chamando o seu script  
+            if ($ja_segue) { // Se for verdadeiro (já segue)
+                echo "<td><a href='seguir.php?id=$idusuario'>Deixar de seguir</a></td>";
+            } else { // Se for falso (ainda não segue)
+                echo "<td><a href='seguir.php?id=$idusuario'>Seguir</a></td>"; 
+            }
+
             echo "</tr>";
-            ?>-->
-
-
+        }
+        ?>
+    </table>
 </body>
 </html>
