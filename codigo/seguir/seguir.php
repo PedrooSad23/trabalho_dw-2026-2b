@@ -7,7 +7,7 @@ $idseguidor = $_SESSION['idusuario'];
 $idseguindo = $_GET['id'];
 
 if ($idseguidor == $idseguindo) {
-    header("Location: ../perfil.php?id=" . $idseguindo);
+    header("Location: list_usuario.php?id=" . $idseguindo);
     exit;
 }
 
