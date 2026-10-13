@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style_grupo6.css">
 </head>
 <body>
 
@@ -11,16 +12,12 @@
 
     <table>
         <tr>
-            <td>id</td>
+            <td>id do usuário</td>
             <td>username</td>
-            <td>usuario</td>
-            <td>name</td>
-            <td>email</td>
-            <td>senha</td>
-            <td>foto</tr>
+            <td>seguir</td>
         </tr>
 
-        <?php
+       <!-- <?php 
         require_once "../conexao.php";
         
         $sql = "SELECT * FROM usuario";
@@ -38,7 +35,14 @@
             $foto = $_GET[''];
             }
               
-            ?>
+            echo "<td>$idusuario</td>";
+            echo "<td>$username</td>";
+//            echo "<td>$name</td>";
+//            echo "<td>$email</td>";
+//            echo "<td>$senha</td>";
+//            echo "<td>$foto</td>";
+            echo "</tr>";
+            ?>-->
 
 
 </body>
