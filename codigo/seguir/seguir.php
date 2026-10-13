@@ -1,5 +1,7 @@
 <?php
-require_once "../verificar_login.php";
+
+
+
 require_once "../conexao.php";
 
 $idseguidor = $_SESSION['idusuario'];
@@ -14,12 +16,10 @@ $resultado = mysqli_query($conexao, "SELECT * FROM seguir WHERE idseguidor = $id
 
 if (mysqli_num_rows($resultado) > 0) {
     mysqli_query($conexao, "DELETE FROM seguir WHERE idseguidor = $idseguidor AND idseguindo = $idseguindo");
-
 } else {
-    mysqli_query($conexao, "INSERT INTO seguir VALUES ($idseguidor, $idseguindo)");
+
+    mysqli_query($conexao, "INSERT INTO seguir (idseguidor, idseguindo) VALUES ($idseguidor, $idseguindo)");
 }
 
-
-
-header("Location: ../perfil.php?id=$idseguindo");
+header("Location: list_usuario.php?id=$idseguindo");
 exit;
