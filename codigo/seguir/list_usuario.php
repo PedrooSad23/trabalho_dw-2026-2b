@@ -26,7 +26,7 @@
         
         //quebra a variável $resultados em linhas (vetores/array)
         while ($linha = mysqli_fetch_array($resultados)) {
-            $id = $_GET['id_usuario'];
+            $idusuario = $_GET['id_usuario'];
             $username_cliente = $_GET['username'];
             $usuario = $_GET['usuario'];
             $name = $_GET['name'];
