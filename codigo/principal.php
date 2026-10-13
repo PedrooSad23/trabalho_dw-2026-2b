@@ -9,6 +9,9 @@
 
 <a href="form_postagem.php">Fazer nova postagem</a>
 
+<br>
+
+<a href="/seguir/list_usuario.php">Usuários</a>
 
 </body>
 
