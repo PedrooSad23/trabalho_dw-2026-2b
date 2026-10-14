@@ -1,7 +1,6 @@
 <?php
-
     session_start();
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +11,7 @@
 </head>
 <body>
 
-    <h2>Lista de usuario</h2>
+    <span><h2>Lista de usuario</h2></span>
 
     <table>
         <tr>
@@ -46,9 +45,9 @@
    
             // Coloca o link de seguir/deixar de seguir chamando o seu script  
             if ($ja_segue) { // Se for verdadeiro (já segue)
-                echo "<td><a href='seguir.php?id=$idusuario'>Deixar de seguir</a></td>";
+                echo "<td class='nao-seguir'><a class='link' href='seguir.php?id=$idusuario'>Deixar de seguir</a></td>";
             } else { // Se for falso (ainda não segue)
-                echo "<td><a href='seguir.php?id=$idusuario'>Seguir</a></td>"; 
+                echo "<td class='seguir'><a class='link' href='seguir.php?id=$idusuario'>Seguir</a></td>";
             }
 
             echo "</tr>";
