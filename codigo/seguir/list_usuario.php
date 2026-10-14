@@ -1,3 +1,7 @@
+<?php
+
+    session_start();
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +22,7 @@
         </tr>
 
         <?php 
+
         require_once "../conexao.php";
 
         // Pega o ID de quem está logado
@@ -29,13 +34,13 @@
         
         // Quebra a variável $resultados em linhas (vetores/array)
         while ($linha = mysqli_fetch_array($resultados)) {
-            $idusuario = $_GET['idusuario'];
-            $username_cliente = $_GET['username'];
+            $idusuario = $linha['idusuario'];
+            $username = $linha['username'];
 
             // Busca no banco linha onde quem está a seguir(idseguidor) é você($id_logado), e confere se a pessoa que está a ser seguida (idseguindo) é o usuário atual da linha
             $conferir = mysqli_query($conexao, "SELECT * FROM seguir WHERE idseguidor = $id_logado AND idseguindo = $idusuario");
             $ja_segue = mysqli_num_rows($conferir) > 0;     
-         
+            echo "<tr>";
             echo "<td>$idusuario</td>";
             echo "<td>$username</td>";
    
@@ -49,6 +54,7 @@
             echo "</tr>";
         }
         ?>
+  
     </table>
 </body>
 </html>
