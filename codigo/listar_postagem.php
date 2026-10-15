@@ -83,6 +83,7 @@
         ?>
             <br>
             <input type="text">
+            
             <input type="submit" value="Comentar">
         <?php
             echo "</div>";

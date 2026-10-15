@@ -12,9 +12,9 @@
         Senha: <br>
         <input type="text" name="senha"> <br>
 
-        <input type="submit" value="Logar">
+        <input type="submit" value="Logar">  
     </form>
 
-    <a href="form_usuario.php">Não tenho cadastro.</a>
+    <a href="form_usuario.php">Não possuo cadastro.</a>
 </body>
 </html>
